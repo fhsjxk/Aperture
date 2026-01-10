@@ -1,6 +1,14 @@
 | English | [简体中文](https://github.com/Minecraft-Radiance/Radiance/blob/main/README-CN.md) |
 
-We are currently working on code clean up / documentation and solving compatibility issues. Source codes will be available here after the first alpha version.
+## Project Status
+
+This repository currently provides **preview binaries only**.
+The source code has **not been released** at this stage.
+
+The last preview-only release is **v0.1.2-preview**.
+Source code will be published starting from the **first alpha release**.
+
+The license of the source code will be defined at that time and will apply starting from the first alpha release.
 
 # Radiance
 

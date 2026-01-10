@@ -1,6 +1,13 @@
 | [English](https://github.com/Minecraft-Radiance/Radiance/blob/main/README.md) | 简体中文 |
 
-我们正在做代码整理和归档以及解决兼容性问题。源码会在我们完成第一个alpha版本之后公开。
+## 项目状态
+
+当前阶段仅提供预览版二进制文件，源码尚未公开。
+
+最后一个仅包含预览版二进制文件的版本为 **v0.1.2-preview**。
+源码将从第一个 Alpha 版本开始对外发布。
+
+源码的许可证将在发布时确定，且将不同于预览版二进制文件所适用的使用条款。
 
 # Radiance
 
