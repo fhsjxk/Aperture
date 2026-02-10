@@ -1,22 +1,15 @@
 | [English](https://github.com/Minecraft-Radiance/Radiance/blob/main/README.md) | 简体中文 |
 
-## 项目状态
-
-当前阶段仅提供预览版二进制文件，源码尚未公开。
-
-最后一个仅包含预览版二进制文件的版本为 **v0.1.2-preview**。
-源码将从第一个 Alpha 版本开始对外发布。
-
-源码的许可证将在发布时确定，且将不同于预览版二进制文件所适用的使用条款。
+> 这里是Radiance mod的Java部分。C++部分请访问[Minecraft Vulkan Renderer (MCVR)](https://github.com/Minecraft-Radiance/MCVR)
 
 # Radiance
 
 Radiance是一个Minecraft Mod，旨在将原版的OpenGL渲染器完全替换成我们的高性能Vulkan C++渲染器，并且支持硬件加速光线追踪。
 由于现代工业界广泛在渲染管线中使用C++，所以我们的Vulkan C++渲染器能够将一个现代工业级的渲染模块（例如DLSS和FSR）无缝集成进来。
 
-[预览版演示视频 (B站)](https://www.bilibili.com/video/BV1NevXBCEPg/)
+[演示视频 (B站)](https://www.bilibili.com/video/BV1NevXBCEPg/)
 
-<img width="2560" height="1440" alt="" src="https://github.com/user-attachments/assets/97f50f4a-3a6e-424d-9dff-d5e6b220f91f" />
+<img width="2560" height="1440" alt="" src="https://image.puxuan.cc/PicGo/2026-02-09_00.45.30.png" />
 
 # 安装指南
 
@@ -49,17 +42,47 @@ Radiance是一个Minecraft Mod，旨在将原版的OpenGL渲染器完全替换�
 
 #### Windows
 
-从[这个](https://github.com/NVIDIA/DLSS/tree/v310.3.0/lib/Windows_x86_64/rel)路径中下载如下列表中的文件到`.minecraft/radiance`文件夹（如果文件夹不存在，请创建一个）。
+从[这个](https://github.com/NVIDIA/DLSS/tree/v310.5.3/lib/Windows_x86_64/rel)路径中下载如下列表中的文件到`.minecraft/radiance`文件夹（如果文件夹不存在，请创建一个）。
 
 * `nvngx_dlss.dll`
 * `nvngx_dlssd.dll`
 
 #### Linux
 
-从[这个](https://github.com/NVIDIA/DLSS/tree/v310.3.0/lib/Linux_x86_64/rel)路径中下载如下列表中的文件到`.minecraft/radiance`文件夹（如果文件夹不存在，请创建一个）。
+从[这个](https://github.com/NVIDIA/DLSS/tree/v310.5.3/lib/Linux_x86_64/rel)路径中下载如下列表中的文件到`.minecraft/radiance`文件夹（如果文件夹不存在，请创建一个）。
 
-* `libnvidia-ngx-dlss.so.310.3.0`
-* `libnvidia-ngx-dlssd.so.310.3.0`
+* `libnvidia-ngx-dlss.so.310.5.3`
+* `libnvidia-ngx-dlssd.so.310.5.3`
+
+# 构建
+
+首先，用`gradle`编译Java来生成JNI头文件。
+
+```
+./gradlew compileJava
+```
+
+然后，克隆[Minecraft Vulkan Renderer (MCVR)](https://github.com/Minecraft-Radiance/MCVR)仓库。
+
+```
+git clone https://github.com/Minecraft-Radiance/MCVR.git
+```
+
+使用`cmake`编译和安装。详细信息请参考[这里](https://github.com/Minecraft-Radiance/MCVR)。
+
+最后，用`./gradlew build`构建。
+
+# Todo列表
+
+[ ] 移植到更多版本和mod加载器（WIP，最高优先级)
+
+[ ] 帧生成
+
+[ ] XESS支持
+
+[ ] HDR
+
+以及更多...
 
 # 致谢
 
@@ -67,7 +90,9 @@ Radiance是一个Minecraft Mod，旨在将原版的OpenGL渲染器完全替换�
 
 这个项目同时也使用了 Nvidia 的 DLSS (Deep Learning Super Sampling) 技术。获取更多信息请访问[这个](https://www.nvidia.com/en-us/geforce/technologies/dlss/)和[这个页面](https://github.com/NVIDIA/DLSS)。
 
-特别感谢所有这个项目使用的开源库的制作者，包括[GLFW](https://github.com/glfw/glfw)， [GLM](https://github.com/icaven/glm)， [STB Image](https://github.com/nothings/stb)和[VMA](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator).
+这个项目也使用了FSR3。更多信息请访问[这个页面](https://gpuopen.com/fidelityfx-super-resolution-3/)。
+
+特别感谢所有这个项目使用的开源库的制作者，包括[NRD](https://github.com/NVIDIA-RTX/NRD)、[GLFW](https://github.com/glfw/glfw)、[GLM](https://github.com/icaven/glm)、[STB Image](https://github.com/nothings/stb)和[VMA](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator)。
 如果有应该致谢但是没有被提及的，请通知本项目作者。我们会把致谢添加在需要添加的位置。
 
 # 免责声明

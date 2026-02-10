@@ -1,23 +1,15 @@
 | English | [简体中文](https://github.com/Minecraft-Radiance/Radiance/blob/main/README-CN.md) |
 
-## Project Status
-
-This repository currently provides **preview binaries only**.
-The source code has **not been released** at this stage.
-
-The last preview-only release is **v0.1.2-preview**.
-Source code will be published starting from the **first alpha release**.
-
-The license of the source code will be defined at that time and will apply starting from the first alpha release.
+> This is the Java part of the Radiance mod. For C++ part, please refer to [Minecraft Vulkan Renderer (MCVR)](https://github.com/Minecraft-Radiance/MCVR)
 
 # Radiance
 
 [Radiance](https://www.minecraft-radiance.com/) is a Minecraft mod that completely replace the vanilla OpenGL renderer with our Vulkan C++ renderer, which supports high performance rendering and hardware-accelerated ray tracing.
 Due to the variety of C++ usage in the modern industrial rendering pipeline, a seamless integration of a modern industrial rendering module (such as DLSS and FSR) into our Vulkan C++ renderer is thus possible.
 
-[Preview Showcase Video (Youtube)](https://www.youtube.com/watch?v=jGIQffPM1Wg)
+[Showcase Video (Youtube)](https://www.youtube.com/watch?v=jGIQffPM1Wg)
 
-<img width="2560" height="1440" alt="" src="https://github.com/user-attachments/assets/97f50f4a-3a6e-424d-9dff-d5e6b220f91f" />
+<img width="2560" height="1440" alt="" src="https://image.puxuan.cc/PicGo/2026-02-09_00.45.30.png" />
 
 # Installation Guide
 
@@ -53,25 +45,57 @@ Currently, if the DLSS runtime libraries are not found, the mod will **cause a c
 
 #### Windows
 
-Download the files listed below from [here](https://github.com/NVIDIA/DLSS/tree/v310.3.0/lib/Windows_x86_64/rel) to the `.minecraft/radiance` folder (if the folder not exist, create one).
+Download the files listed below from [here](https://github.com/NVIDIA/DLSS/tree/v310.5.3/lib/Windows_x86_64/rel) to the `.minecraft/radiance` folder (if the folder not exist, create one).
 
 * `nvngx_dlss.dll`
 * `nvngx_dlssd.dll`
 
 #### Linux
 
-Download the files listed below from [here](https://github.com/NVIDIA/DLSS/tree/v310.3.0/lib/Linux_x86_64/rel) to the `.minecraft/radiance` folder (if the folder not exist, create one).
+Download the files listed below from [here](https://github.com/NVIDIA/DLSS/tree/v310.5.3/lib/Linux_x86_64/rel) to the `.minecraft/radiance` folder (if the folder not exist, create one).
 
-* `libnvidia-ngx-dlss.so.310.3.0`
-* `libnvidia-ngx-dlssd.so.310.3.0`
+* `libnvidia-ngx-dlss.so.310.5.3`
+* `libnvidia-ngx-dlssd.so.310.5.3`
+
+# Build
+
+First, compile Java with `gradle` to generate the JNI native headers.
+
+```
+./gradlew compileJava
+```
+
+Then, clone the [Minecraft Vulkan Renderer (MCVR)](https://github.com/Minecraft-Radiance/MCVR) repository.
+
+```
+git clone https://github.com/Minecraft-Radiance/MCVR.git
+```
+
+Use `cmake` to build it and install it. Please refer to [this](https://github.com/Minecraft-Radiance/MCVR) for detail.
+
+Finally, build with `./gradlew build`.
+
+# TODO List
+
+[ ] port to more versions and mod loaders (WIP, first priority)
+
+[ ] Frame Generation
+
+[ ] XESS support
+
+[ ] HDR
+
+And more...
 
 # Credits
 
 This project uses Vulkan technology. Please refer to [this page](https://www.vulkan.org/) for more information.
 
-This project also uses Nvidia's DLSS (Deep Learning Super Sampling) technology. Please refer to [this page](https://www.nvidia.com/en-us/geforce/technologies/dlss/) and [this page](https://github.com/NVIDIA/DLSS) for more information. 
+This project uses Nvidia's DLSS (Deep Learning Super Sampling) technology. Please refer to [this page](https://www.nvidia.com/en-us/geforce/technologies/dlss/) and [this page](https://github.com/NVIDIA/DLSS) for more information. 
 
-Special thanks to all contributors of open-source libraries used in this project, including [GLFW](https://github.com/glfw/glfw), [GLM](https://github.com/icaven/glm), [STB Image](https://github.com/nothings/stb) and [VMA](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator). If any are not credited and should be, please inform the author and credit will be applied where required.
+This project uses FSR3. Please refer to [this page](https://gpuopen.com/fidelityfx-super-resolution-3/) for more information.
+
+Special thanks to all contributors of open-source libraries used in this project, including [NRD](https://github.com/NVIDIA-RTX/NRD), [GLFW](https://github.com/glfw/glfw), [GLM](https://github.com/icaven/glm), [STB Image](https://github.com/nothings/stb) and [VMA](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator). If any are not credited and should be, please inform the author and credit will be applied where required.
 
 # Disclaimer
 
