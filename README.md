@@ -77,13 +77,13 @@ Finally, build with `./gradlew build`.
 
 # TODO List
 
-[ ] port to more versions and mod loaders (WIP, first priority)
+- [ ] port to more versions and mod loaders (WIP, first priority)
 
-[ ] Frame Generation
+- [ ] Frame Generation
 
-[ ] XESS support
+- [ ] XESS support
 
-[ ] HDR
+- [ ] HDR
 
 And more...
 

@@ -74,13 +74,13 @@ git clone https://github.com/Minecraft-Radiance/MCVR.git
 
 # Todo列表
 
-[ ] 移植到更多版本和mod加载器（WIP，最高优先级)
+- [ ] 移植到更多版本和mod加载器（WIP，最高优先级)
 
-[ ] 帧生成
+- [ ] 帧生成
 
-[ ] XESS支持
+- [ ] XESS支持
 
-[ ] HDR
+- [ ] HDR
 
 以及更多...
 
