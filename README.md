@@ -11,6 +11,16 @@ Due to the variety of C++ usage in the modern industrial rendering pipeline, a s
 
 <img width="2560" height="1440" alt="" src="https://image.puxuan.cc/PicGo/2026-02-09_00.45.30.png" />
 
+# (Important) PBR Texture Packs
+
+Currently, to enable PBR texture packs, small adaption is necessary to allow miltiplexing. This maybe simpilfied in further versions.
+
+1. Unzip the texture pack
+2. Go into the unziped folder, move `assets/minecraft/textures/**/*_s.png` to `assets/minecraft/textures/specular/**/*_s.png` and `assets/minecraft/textures/**/*_n.png` to `assets/minecraft/textures/normal/**/*_n.png`. The fact behind is that Radiance will create seperate texture atlases for specular and normal textures. This disables vanilla minecraft to read them (4x memory save).
+3. Zip the folder
+
+A sample `python` script can be found [here](https://gist.github.com/Ljiong201108/e5a2fe8f8ac63f3cc70bf5557a948377).
+
 # Installation Guide
 
 We assume that the Minecraft base is installed in `.minecraft` folder. If the installation folder is different, please replace the corresponding part yourself.
