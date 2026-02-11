@@ -1,4 +1,4 @@
-| [English](https://github.com/Minecraft-Radiance/Radiance/blob/main/README.md) | 简体中文 |
+| [English](https://github.com/fhsjxk/Aperture/blob/main/README.md) | 简体中文 |
 
 > 这里是Radiance mod的Java部分。C++部分请访问[Minecraft Vulkan Renderer (MCVR)](https://github.com/Minecraft-Radiance/MCVR)
 
