@@ -10,7 +10,7 @@ Due to the variety of C++ usage in the modern industrial rendering pipeline, a s
 [Showcase Video (Youtube)](https://www.youtube.com/watch?v=jGIQffPM1Wg)
 
 <img width="2560" height="1440" alt="" src="https://image.puxuan.cc/PicGo/2026-02-09_00.45.30.png" />
-![2026-02-12_01 01 08](https://github.com/user-attachments/assets/babfa356-8c03-49b0-b79c-4dd6318bb959)
+<img width="2560" height="1440" alt="" src="https://github.com/user-attachments/assets/babfa356-8c03-49b0-b79c-4dd6318bb959" />
 
 
 # (Important) PBR Texture Packs
