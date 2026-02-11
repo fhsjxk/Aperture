@@ -10,6 +10,7 @@ Radiance是一个Minecraft Mod，旨在将原版的OpenGL渲染器完全替换�
 [演示视频 (B站)](https://www.bilibili.com/video/BV1NevXBCEPg/)
 
 <img width="2560" height="1440" alt="" src="https://image.puxuan.cc/PicGo/2026-02-09_00.45.30.png" />
+<img width="2560" height="1440" alt="" src="https://github.com/user-attachments/assets/babfa356-8c03-49b0-b79c-4dd6318bb959" />
 
 # (重要) 关于PBR材质包
 
